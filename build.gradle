@@ -1,0 +1,25 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.9'
+}
+
+group 'edu.realemj'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+javafx {
+    version = '15.0.1'
+    modules = [ 'javafx.controls', 'javafx.fxml']
+}
+
+dependencies {
+    testCompile group: 'org.testng', name: 'testng', version: '7.3.0'
+}
+
+test {
+    useTestNG()
+}
