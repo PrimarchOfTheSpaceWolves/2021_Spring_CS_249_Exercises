@@ -21,7 +21,7 @@ public class TestCircle {
         System.out.println(c1.getRadius());
 
         doubleRadius(c1);
-        System.out.println(c1.getRadius());
+        System.out.println(c1.getRadius()); 
 
         makeNewCircle(c1);
         System.out.println(c1.getRadius());
