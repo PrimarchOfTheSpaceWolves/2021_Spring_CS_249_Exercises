@@ -4,8 +4,8 @@ public class Person {
     private String name = "";
     private boolean alive = true;
 
-    public Person(String n) {
-        name = n;
+    public Person(String name) {
+        this.name = name;
     }
 
     public String getName() {
