@@ -42,4 +42,8 @@ public class Circle extends Shape {
         s += "Radius: " + radius + "\n";
         return s;
     }
+
+    public static void makeShapeSpeech() {
+        System.out.println("VERILY!");
+    }
 }

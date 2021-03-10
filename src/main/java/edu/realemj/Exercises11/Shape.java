@@ -14,6 +14,18 @@ public class Shape {
         this.center = center;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if(obj instanceof Shape) {
+            Shape other = (Shape)obj;
+            return (this.filled == other.filled
+                    && this.center.equals(other.center));
+        }
+        else {
+            return false;
+        }
+    }
+
     public boolean isFilled() {
         return filled;
     }
@@ -37,5 +49,9 @@ public class Shape {
         s += "Center: " + center.getX();
         s += ", " + center.getY() + "\n";
         return s;
+    }
+
+    public static void makeShapeSpeech() {
+        System.out.println("BEHOLD!");
     }
 }

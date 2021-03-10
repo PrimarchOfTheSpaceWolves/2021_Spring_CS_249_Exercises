@@ -29,5 +29,20 @@ public class TestShapes {
 
         sqr.setHeight(10);
         System.out.println(sqr);
+
+        Shape.makeShapeSpeech();
+        Circle.makeShapeSpeech();
+
+        printShape(s);
+        printShape(c2);
+
+        Shape s2 = new Circle(6.5,
+                            true,
+                                new Point2D(3,1));
+    }
+
+    public static void printShape(Shape s) {
+        System.out.println("AND LO! A SHAPE...");
+        System.out.println(s.toString());
     }
 }
