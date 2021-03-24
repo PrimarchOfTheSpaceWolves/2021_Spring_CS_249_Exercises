@@ -39,8 +39,24 @@ public class Circle extends Shape {
     @Override
     public String toString() {
         String s = super.toString();
-        s += "Radius: " + radius + "\n";
+        s = s.substring(0, s.length()-1);
+        s += ", r = " + radius + "]";
         return s;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if(obj instanceof Circle) {
+            if(!super.equals(obj)) {
+                return false;
+            }
+
+            final double EPS = 1e-15;
+            return Math.abs(((Circle)obj).radius - radius) < EPS;
+        }
+        else {
+            return false;
+        }
     }
 
     public static void makeShapeSpeech() {

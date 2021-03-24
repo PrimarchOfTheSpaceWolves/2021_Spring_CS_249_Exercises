@@ -45,9 +45,18 @@ public class Shape {
     @Override
     public String toString() {
         String s = "";
+        /*
         s += "Filled? " + filled + "\n";
         s += "Center: " + center.getX();
         s += ", " + center.getY() + "\n";
+         */
+        s += "[";
+        if(filled) {
+            s += "filled, ";
+        }
+        s += "(" + center.getX() + ",";
+        s += center.getY() + ")";
+        s += "]";
         return s;
     }
 

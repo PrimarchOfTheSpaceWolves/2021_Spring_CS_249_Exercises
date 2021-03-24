@@ -27,7 +27,7 @@ public class Rectangle extends Shape {
 
     @Override
     public String toString() {
-        String s = width + " x " + height;
+        String s = "[" + width + " x " + height + "]";
         return s;
     }
 }
