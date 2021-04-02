@@ -23,3 +23,27 @@ dependencies {
 test {
     useTestNG()
 }
+
+task runMyJavaFX(type:JavaExec) {
+    main = "edu.realemj.Exercises14.MyJavaFX"
+    classpath = sourceSets.main.runtimeClasspath
+    jvmArgs = [ '--module-path', classpath.asPath,
+        '--add-modules', 'javafx.controls',
+            '--add-modules', 'javafx.fxml'
+    ]
+    dependsOn 'classes'
+    group 'javafx programs'
+    standardInput = System.in
+}
+
+task runPaneExample(type:JavaExec) {
+    main = "edu.realemj.Exercises14.PaneExample"
+    classpath = sourceSets.main.runtimeClasspath
+    jvmArgs = [ '--module-path', classpath.asPath,
+                '--add-modules', 'javafx.controls',
+                '--add-modules', 'javafx.fxml'
+    ]
+    dependsOn 'classes'
+    group 'javafx programs'
+    standardInput = System.in
+}
