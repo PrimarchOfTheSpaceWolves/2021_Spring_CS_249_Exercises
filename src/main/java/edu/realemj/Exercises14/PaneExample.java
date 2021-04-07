@@ -14,6 +14,13 @@ public class PaneExample extends javafx.application.Application {
         Button b4 = new Button("4");
         Button b5 = new Button("5");
 
+        b1.setOnAction(new BoringButtonHandler("B1"));
+        b2.setOnAction(new BoringButtonHandler("B2"));
+        b3.setOnAction(new BoringButtonHandler("B3"));
+        b4.setOnAction(new BoringButtonHandler("B4"));
+        b5.setOnAction(new BoringButtonHandler("B5"));
+
+
         /*
         //StackPane pane = new StackPane();
         //FlowPane pane = new FlowPane();

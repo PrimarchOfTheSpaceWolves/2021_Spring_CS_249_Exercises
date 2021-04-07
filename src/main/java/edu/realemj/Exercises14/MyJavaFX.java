@@ -8,8 +8,10 @@ public class MyJavaFX extends javafx.application.Application {
     public void start(Stage primaryStage) {
         Button btOK = new Button("OK");
 
+        btOK.setOnAction(new BoringButtonHandler());
+
         Scene scene = new Scene(btOK, 200, 250);
-        scene.getStylesheets().add("test.css");
+        //scene.getStylesheets().add("test.css");
 
         primaryStage.setTitle("BEHOLD!");
         primaryStage.setScene(scene);
