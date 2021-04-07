@@ -47,3 +47,15 @@ task runPaneExample(type:JavaExec) {
     group 'javafx programs'
     standardInput = System.in
 }
+
+task runWagonGame(type:JavaExec) {
+    main = "edu.realemj.Exercises14.WagonGame"
+    classpath = sourceSets.main.runtimeClasspath
+    jvmArgs = [ '--module-path', classpath.asPath,
+                '--add-modules', 'javafx.controls',
+                '--add-modules', 'javafx.fxml'
+    ]
+    dependsOn 'classes'
+    group 'javafx programs'
+    standardInput = System.in
+}

@@ -9,6 +9,7 @@ public class MyJavaFX extends javafx.application.Application {
         Button btOK = new Button("OK");
 
         Scene scene = new Scene(btOK, 200, 250);
+        scene.getStylesheets().add("test.css");
 
         primaryStage.setTitle("BEHOLD!");
         primaryStage.setScene(scene);

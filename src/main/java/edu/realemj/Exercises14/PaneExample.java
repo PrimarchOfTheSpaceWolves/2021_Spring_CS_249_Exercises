@@ -48,6 +48,8 @@ public class PaneExample extends javafx.application.Application {
         BorderPane.setAlignment(b5, Pos.CENTER);
 
         Scene scene = new Scene(pane, 200, 200);
+        scene.getStylesheets().add("test.css");
+        b1.getStyleClass().add("my-button");
 
         primaryStage.setTitle("Pane example");
         primaryStage.setScene(scene);
