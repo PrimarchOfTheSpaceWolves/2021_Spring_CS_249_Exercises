@@ -28,7 +28,25 @@ public class OBJModel {
         }
     }
 
-    public void load(String filename) throws IOException {
+    public void parseOBJLine(String line) {
+        Scanner lineScan = new Scanner(line);
+        String first = lineScan.next();
+
+        if(first.equals("v")) {
+            double x = lineScan.nextDouble();
+            double y = lineScan.nextDouble();
+            double z = lineScan.nextDouble();
+            Vertex v = new Vertex(x,y,z);
+            vertices.add(v);
+        }
+        else if(first.equals("f")) {
+            for(int i = 0; i < 3; i++) {
+                indices.add(lineScan.nextInt());
+            }
+        }
+    }
+
+    public void load(String filename) throws OBJModelException {
         try (
                 Scanner inFile = new Scanner(new File(filename));
                 )
@@ -43,23 +61,12 @@ public class OBJModel {
                 // ""
                 // "?????"
                 if(line.length() > 0) {
-                    Scanner lineScan = new Scanner(line);
-                    String first = lineScan.next();
-
-                    if(first.equals("v")) {
-                        double x = lineScan.nextDouble();
-                        double y = lineScan.nextDouble();
-                        double z = lineScan.nextDouble();
-                        Vertex v = new Vertex(x,y,z);
-                        vertices.add(v);
-                    }
-                    else if(first.equals("f")) {
-                        for(int i = 0; i < 3; i++) {
-                            indices.add(lineScan.nextInt());
-                        }
-                    }
+                    parseOBJLine(line);
                 }
             }
+        }
+        catch(Exception e) {
+            throw new OBJModelException("Failed to load!", e);
         }
     }
 
@@ -80,6 +87,7 @@ public class OBJModel {
         }
         catch(Exception e) {
             System.err.println(e);
+            e.printStackTrace();
         }
     }
 }
