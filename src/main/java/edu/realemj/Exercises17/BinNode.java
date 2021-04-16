@@ -25,4 +25,8 @@ public class BinNode<E extends Comparable<E>>
     public int compareTo(BinNode<E> b) {
         return data.compareTo(b.data);
     }
+
+    public String toString() {
+        return "(" + data.toString() + ")";
+    }
 }
