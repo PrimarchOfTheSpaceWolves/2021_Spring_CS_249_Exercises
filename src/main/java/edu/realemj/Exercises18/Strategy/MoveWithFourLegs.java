@@ -1,4 +1,4 @@
-package edu.realemj.Exercises18;
+package edu.realemj.Exercises18.Strategy;
 
 public class MoveWithFourLegs implements Moveable {
     public void move() {

@@ -1,4 +1,4 @@
-package edu.realemj.Exercises18;
+package edu.realemj.Exercises18.Strategy;
 
 public class NoMove implements Moveable {
     public void move() {
